@@ -1,0 +1,12 @@
+<table id="blog">
+    <tr>
+        <th>S/N</th>
+        <th>Title</th>
+        <th>Description</th>
+    </tr>
+    <tr *ngFor="let blog of blogs">
+        <td>{{blog.id}}</td>
+        <td>{{blog.title}}</td>
+        <td>{{blog.description}}</td>
+    </tr>
+    </table>

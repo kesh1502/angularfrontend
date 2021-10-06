@@ -1,1 +1,87 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+// CSS3 Flexbox Holy Grail Layout
+// Made with ❤ by @ImDigamberSingh
+// https://www.positronx.io
+*/
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      font-family: sans-serif;
+  }
+  
+  .container {
+    display:flex;
+    flex-flow:row wrap;
+  }
+  
+  app-header, 
+  app-nav, 
+  app-product-list,
+  app-blog-list,
+  app-createproduct, 
+  app-editproduct,
+  app-aside, 
+  app-footer {
+    padding: 20px;
+    margin:5px;
+  }
+  
+  app-header {
+    order:1;
+    height:100px;
+    flex:0 1 100%;
+    background: #797878;
+  }
+  
+  app-nav {
+    order:2;
+    flex: 0 1 200px;
+    background: rgb(193, 191, 196);
+  }
+  
+  app-product-list,
+  app-blog-list,
+  app-createproduct,
+  app-editproduct{
+    order:3;
+    flex: 1;
+    min-height:850px;
+    background: rgb(248, 248, 248);
+    align-items: center;
+    padding: 50px;
+  }
+  
+  app-aside {
+    order:4;
+    flex:0 1 200px;
+    background: rgb(149, 180, 216);
+  }
+  
+  app-footer {
+    order:5;
+    height:100px;
+    flex:0 1 100%;
+    background: rgb(119, 120, 121);
+  }
+
+  @media (max-width: 768px) {
+    app-header, 
+    app-nav, 
+    app-product-list,
+    app-createproduct,
+    app-editproduct,
+    app-blog-list,
+    app-aside, 
+    app-footer {
+      flex: unset;
+      width: 100%;
+    }
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
