@@ -4,7 +4,7 @@ import { CreateproductComponent } from './products/createproduct/createproduct.c
 import { EditproductComponent } from './products/editproduct/editproduct.component';
 import { ProductListComponent } from './products/product-list/product-list.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
-
+import { CreateblogComponent } from './blog/createblog/createblog.component';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'products' },
@@ -15,6 +15,7 @@ const routes: Routes = [
     { path: 'products/edit', component: EditproductComponent },
     { path: '', pathMatch: 'full', redirectTo: 'blog' },
     { path: 'blog', component: BlogListComponent },
+    
 ];
 
 @NgModule({

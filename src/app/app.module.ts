@@ -17,6 +17,7 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { CreateproductComponent } from './products/createproduct/createproduct.component';
 import { EditproductComponent } from './products/editproduct/editproduct.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
+import { CreateblogComponent } from './blog/createblog/createblog.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -30,6 +31,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/products/edit', pathMatch: 'full' },
   { path: 'blog', component: BlogListComponent },
   { path: '', redirectTo: 'blog', pathMatch: 'full'},
+ // { path: 'blog/create', component: CreateblogComponent },
+  //{ path: '', redirectTo: '/blog/create', pathMatch: 'full'},
     
 ]
 

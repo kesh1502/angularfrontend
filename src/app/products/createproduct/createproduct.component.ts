@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from "../product.model"
 import { ProductService } from "../product.service"
+import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-createproduct',
@@ -22,7 +26,7 @@ export class CreateproductComponent implements OnInit {
   add = false;
   products: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.getProducts()
@@ -31,6 +35,13 @@ export class CreateproductComponent implements OnInit {
   private getProducts() {
     this.productService.getProducts().subscribe(products => this.products = products);
   }
+
+  profileForm = this.fb.group({
+    id: ['', Validators.required],
+    name: [''],
+    description: [''],
+    price: ['']
+    });
 
   addProduct() {
     const data = {
@@ -45,34 +56,10 @@ export class CreateproductComponent implements OnInit {
     });
   }
 
-  setProductEdit(product: Product) {
-    this.product.name = product.name;
-    this.product.id = product.id;
-    this.product.description = product.description;
-    this.product.price = product.price;
-    this.edit = false;
-    this.add = true;
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.profileForm.value);
   }
 
-  resetValues() {
-    this.product.name = "";
-    this.product.id = 0;
-    this.product.description = "";
-    this.product.price = 0;
-    this.edit = true;
-    this.add = false;
-  }
 
-  removeProduct(product: Product) {
-    const id = product.id;
-    console.log(product)
-    this.productService.deleteProduct(id).subscribe(product => console.log(product));
-    this.getProducts()
-  }
-
-  updateProduct(){
-    this.productService.editProduct(this.product).subscribe(response => console.log(response));
-    this.getProducts()
-    this.resetValues()
-  }
 }

@@ -21,7 +21,7 @@ export class BlogService {
   }
 
   createBlog(blog: Blog): Observable<Blog> {
-    blog.id = blog.id+1;
+    blog.id = 0;
     return this.http.post<Blog>(this.blogUrl, blog).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);

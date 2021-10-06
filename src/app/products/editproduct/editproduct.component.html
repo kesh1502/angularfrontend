@@ -1,29 +1,27 @@
-<table id="products">
-    <tr>
-        <th>S/N</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Update</th>
-        <th>Delete</th>
-    </tr>
-    <tr *ngFor="let product of products">
-        <td>{{product.id}}</td>
-        <td>{{product.name}}</td>
-        <td>{{product.description}}</td>
-        <td>{{product.price}}</td>
-        <td><button  (click)="setProductEdit(product)">Update</button></td>
-        <td><button (click)="removeProduct(product)">Delete</button></td>
-    </tr>
-    </table>
-    <div>
-        <label for="productID">ID:</label>
-         <input type="num" name="productID" [(ngModel)]="product.id"><br>
-        <label for="productName">Full Name:</label>
-        <input type="text" name="productName" [(ngModel)]="product.name"><br>
-        <label for="productDescription">Description</label>
-        <input type="text" name="productDescription" [(ngModel)]="product.description"><br>
-        <label for="price">Price </label>
-        <input type="number" name="price" [(ngModel)]="product.price"><br>
-        <button [hidden]="edit" (click)="updateProduct()">Update Product</button>
-    </div>
+<h1>Update/Delete Products</h1>
+<div class="center">
+    <table id="products">
+        <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.price}}</td>
+            <td><button  (click)="setProductEdit(product)">Update</button></td>
+            <td><button (click)="removeProduct(product)">Delete</button></td>
+        </tr>
+        </table>
+            <label for="productID">ID: <input type="num" name="productID" [(ngModel)]="product.id"/></label>
+            <label for="productName">Full Name:<input type="text" name="productName" [(ngModel)]="product.name"/></label>
+            <label for="productDescription">Description:<input type="text" name="productDescription" [(ngModel)]="product.description"/></label>
+            <label for="price">Price: <input type="number" name="price" [(ngModel)]="product.price"></label>
+            <button style="width: 50%;"  [hidden]="edit" (click)="updateProduct()">Update Product</button>
+       
+</div>

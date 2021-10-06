@@ -1,20 +1,41 @@
 input {
-    display: block;
-    width: 100%;
-    align-content: center;
-    padding: .5rem;
-    margin: 1rem 0;
-    box-sizing: border-box;
-  }
-  
-  .add-button {
-   padding: .5rem 1.5rem;
-   font-size: 1rem;
-   margin-bottom: 2rem;
-   size: 60px;
-  }
-  
-  .add-button:hover {
-    color: white;
-    background-color: #42545C;
-  }
+  display: block;
+  width: 100%;
+  align-content: center;
+  padding: .5rem;
+  margin: 1rem 0;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.add-button {
+ padding: .5rem 1.5rem;
+ font-size: 1rem;
+ margin-bottom: 2rem;
+ size: 60px;
+ width: 50%;
+}
+
+.add-button:hover {
+  color: white;
+  background-color: #42545C;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 80%;
+  display: flex;
+}
+
+form {
+  padding-top: 1rem;
+}
+
+label {
+  display: block;
+  margin: .5em 0;
+  font-weight: bold;
+}
